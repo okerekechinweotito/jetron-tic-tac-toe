@@ -1,0 +1,18 @@
+/* Board.js Styles */
+.board {
+  border: 1rem dashed #f35803;
+  width: 400px;
+  height: 400px;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  gap: 1rem;
+}
+
+@media screen and (max-width: 420px) {
+  .board {
+    border: 0.5rem dashed #f35803;
+    width: 300px;
+    height: 300px;
+    gap: 0.5rem;
+  }
+}
