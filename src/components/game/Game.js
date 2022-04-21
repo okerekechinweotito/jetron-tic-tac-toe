@@ -4,12 +4,13 @@ import Board from "../board/Board";
 import "./game.css";
 
 const Game = () => {
-  const [history, setHistory] = useState([Array(9).fill(null)]);
+  const [history, setHistory] = useState([Array(9).fill(null)]); // create array with 9 elements and fill with null
   const [stepNumber, setStepNumber] = useState(0);
   const [xIsNext, setXisNext] = useState(true);
   const winner = calculateWinner(history[stepNumber]);
-  const xO = xIsNext ? "X" : "O";
+  const xO = xIsNext ? "X" : "O"; // alternate the display text when clicked to X or O
 
+  /* handles square click */
   const handleClick = (i) => {
     const historyPoint = history.slice(0, stepNumber + 1);
     const current = historyPoint[stepNumber];
@@ -23,6 +24,7 @@ const Game = () => {
     setXisNext(!xIsNext);
   };
 
+  /* handles history Go to move*/
   const jumpTo = (step) => {
     setStepNumber(step);
     setXisNext(step % 2 === 0);
@@ -38,6 +40,7 @@ const Game = () => {
       );
     });
 
+  /* handles text to be displayed after Game is over */
   const verdict = () => {
     if (winner) {
       return <h3 className="verdict">Player {winner} wins !</h3>;
