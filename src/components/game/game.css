@@ -18,11 +18,11 @@
 }
 
 .info-wrapper {
-  min-width: 300px;
+  min-width: 400px;
   display: flex;
   justify-content: space-between;
   border: 1px solid #f35803;
-  margin-left: -15em;
+  margin-left: -10em;
 }
 
 .info-wrapper button {
@@ -54,7 +54,7 @@
 }
 
 /* Responsiveness */
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1000px) {
   .board-info-wrapper {
     flex-direction: column;
     align-items: center;
